@@ -1,0 +1,32 @@
+{
+  "name": "ticket-ai",
+  "version": "1.0.0",
+  "description": "AI-powered MongoDB query generation and explanation system",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "ai",
+    "mongodb",
+    "llm",
+    "query-generation",
+    "natural-language"
+  ],
+  "author": "mindbenderstech",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "openai": "^4.20.1",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0"
+  }
+}
