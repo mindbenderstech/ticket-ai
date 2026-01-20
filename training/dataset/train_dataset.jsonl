@@ -1,0 +1,20 @@
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me all tickets with high priority", "output": "{\"priority\": \"high\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find all open tickets", "output": "{\"status\": \"open\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Get tickets created by John", "output": "{\"createdBy\": \"John\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me tickets assigned to Sarah", "output": "{\"assignee\": \"Sarah\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find all closed tickets with high priority", "output": "{\"status\": \"closed\", \"priority\": \"high\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Get tickets tagged as bug", "output": "{\"tags\": \"bug\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me all urgent tickets that are open", "output": "{\"priority\": \"urgent\", \"status\": \"open\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find tickets created in the last 7 days", "output": "{\"createdAt\": {\"$gte\": {\"$date\": \"subtract_7_days\"}}}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Get all tickets with medium or high priority", "output": "{\"priority\": {\"$in\": [\"medium\", \"high\"]}}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me tickets assigned to John or Sarah", "output": "{\"assignee\": {\"$in\": [\"John\", \"Sarah\"]}}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find tickets with title containing 'login'", "output": "{\"title\": {\"$regex\": \"login\", \"$options\": \"i\"}}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Get all in progress tickets", "output": "{\"status\": \"in_progress\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me tickets with low priority", "output": "{\"priority\": \"low\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find tickets created by admin users", "output": "{\"createdBy\": {\"$regex\": \"admin\", \"$options\": \"i\"}}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Get tickets not assigned to anyone", "output": "{\"assignee\": {\"$exists\": false}}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me all tickets tagged as feature request", "output": "{\"tags\": \"feature\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find tickets updated in the last 24 hours", "output": "{\"updatedAt\": {\"$gte\": {\"$date\": \"subtract_1_day\"}}}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Get tickets with critical priority", "output": "{\"priority\": \"critical\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me resolved tickets", "output": "{\"status\": \"resolved\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find tickets with more than 5 comments", "output": "{\"commentCount\": {\"$gt\": 5}}"}

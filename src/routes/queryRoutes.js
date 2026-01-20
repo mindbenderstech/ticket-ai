@@ -1,8 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { generateQuery } = require('../services/llmService');
 const { executeQuery } = require('../services/mongoService');
 const { explainResults } = require('../services/explanationService');
+
+// Choose LLM service based on environment variable
+const USE_LOCAL_LLM = process.env.USE_LOCAL_LLM === 'true';
+const llmService = USE_LOCAL_LLM
+  ? require('../services/localLlmService')
+  : require('../services/llmService');
+
+const { generateQuery } = llmService;
 
 /**
  * Main endpoint: Convert natural language to MongoDB query and explain results

@@ -1,0 +1,5 @@
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me all pending tickets", "output": "{\"status\": \"pending\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find tickets assigned to Mike", "output": "{\"assignee\": \"Mike\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Get high priority open tickets", "output": "{\"priority\": \"high\", \"status\": \"open\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Show me tickets tagged as enhancement", "output": "{\"tags\": \"enhancement\"}"}
+{"instruction": "Convert the following question to a MongoDB query", "input": "Find tickets created this month", "output": "{\"createdAt\": {\"$gte\": {\"$date\": \"start_of_month\"}}}"}

@@ -18,12 +18,16 @@ UI → API → LLM (Query Generation) → MongoDB Execution → LLM (Result Expl
 
 ## Features
 
+- **Two LLM Options**:
+  - OpenAI GPT-4 (cloud-based, ready to use)
+  - Fine-tuned LLaMA 3 (local, open-source, no API costs)
 - Natural language to MongoDB query conversion
 - Automatic query execution
 - AI-powered result explanation
 - Schema introspection
 - RESTful API
 - Error handling and validation
+- Training pipeline for custom model fine-tuning
 
 ## Setup
 
@@ -31,7 +35,9 @@ UI → API → LLM (Query Generation) → MongoDB Execution → LLM (Result Expl
 
 - Node.js 18+
 - MongoDB instance
-- OpenAI API key (or other LLM provider)
+- **Choose one**:
+  - OpenAI API key (quick start)
+  - OR Local GPU for fine-tuned LLaMA model (cost-effective at scale)
 
 ### Installation
 
@@ -54,7 +60,14 @@ cp .env.example .env
 Edit `.env` and add your configuration:
 - `MONGODB_URI`: Your MongoDB connection string
 - `MONGODB_DB_NAME`: Database name
-- `OPENAI_API_KEY`: Your OpenAI API key
+
+**For OpenAI (Quick Start)**:
+- Set `USE_LOCAL_LLM=false`
+- Set `OPENAI_API_KEY`: Your OpenAI API key
+
+**For Local LLaMA (After Training)**:
+- Set `USE_LOCAL_LLM=true`
+- See [TRAINING_GUIDE.md](TRAINING_GUIDE.md) for setup instructions
 
 4. Start the server:
 ```bash
@@ -201,14 +214,27 @@ The API returns consistent error responses:
 }
 ```
 
+## Training Your Own Model
+
+Want to use a free, open-source model instead of paying for OpenAI?
+
+See our comprehensive [TRAINING_GUIDE.md](TRAINING_GUIDE.md) for:
+- Fine-tuning LLaMA 3 on Google Colab (free GPU)
+- Creating custom training datasets
+- Running the model locally with Ollama
+- Zero API costs after training
+
+**Time to POC**: ~1 hour including training
+
 ## Future Enhancements
 
+- [x] Support for local open-source models
+- [x] Training pipeline with Google Colab
 - [ ] Support for aggregation pipelines
 - [ ] Query result caching
 - [ ] Rate limiting
 - [ ] Authentication & authorization
 - [ ] Query history and analytics
-- [ ] Support for multiple LLM providers
 - [ ] WebSocket support for real-time queries
 - [ ] Query validation and sanitization
 - [ ] UI dashboard
